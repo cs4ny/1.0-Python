@@ -1,0 +1,25 @@
+import turtle
+
+wn = turtle.Screen()
+wn.bgcolor("black")
+
+noname = turtle.Turtle()
+noname.color ("green")
+mucha = turtle.Turtle()
+mucha.color ("green")
+
+for j in range (10):
+    noname.left(10)
+    noname.forward(50)
+    noname.left(90)
+    noname.forward(100)
+    for i in ("green"):
+        noname.right(30)
+        noname.forward(70)
+        noname.right(30)
+        noname.back(70)
+
+
+
+wn.exitonclick()
+
