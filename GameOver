@@ -1,0 +1,4 @@
+print ("Game Over, you lose")
+# Game Over
+# Demostrates the print command
+input( "\n\nPress the enter key to exit.")
