@@ -1,0 +1,111 @@
+import pygame
+import random
+black = (0,0,0)
+white = (255,255,255)
+green =  (0,255,0)
+red = ( 255,0,0)
+blue = (0,130,255)
+pink = (255,120,255)
+
+# Function of the car
+def car(screen,rx,ry):
+    pygame.draw.rect(screen,red,[rx,25+ry,90,30])
+    pygame.draw.circle(screen,white,[20+rx,60+ry],15)
+    pygame.draw.circle(screen,white,[70+rx,60+ry],15)
+    pygame.draw.rect(screen,red,[40+rx,ry,45,45])
+    pygame.draw.rect(screen,white,[50+rx,5+ry,30,20])
+
+#Starting of the animation
+pygame.init()
+size = [700,500]
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption ("Move the car with arrow key")
+done = False
+clock = pygame.time.Clock()
+
+#Starting point
+rx = 0
+ry = 400
+x_speed = 0
+y_speed = 0
+font = pygame.font.Font(None,36)
+display_instructions = True
+instruction_page=1
+
+def hidden_text(x1,y2):
+    if rx==x1 or ry==y2:
+        text = font.render("HIDDEN MESSAGE",True,white)
+        text_rect= text.get_rect()
+        text_x = screen.get_width()/2 - text_rect.width/2
+        text_y = screen.get_height()/2 - text_rect.height/2
+        screen.blit(text,[text_x,text_y])
+    
+sakura= pygame.image.load("sakura3.png").convert()
+
+#The movement of the car
+while done == False:
+    for event in pygame.event.get():
+        if event.type ==pygame.QUIT:
+            done= True
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                x_speed= -10
+            if event.key == pygame.K_RIGHT:
+                x_speed= 10
+            if event.key == pygame.K_UP:
+                y_speed= -10
+            if event.key == pygame.K_DOWN:
+                y_speed= 10
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                x_speed=0
+            if event.key == pygame.K_RIGHT:
+                x_speed=0
+            if event.key == pygame.K_UP:
+                y_speed=0
+            if event.key == pygame.K_DOWN:
+                y_speed = 0
+
+    rx+=x_speed
+    ry+=y_speed
+      
+# Drawing
+    screen.fill(black)
+    for i in range(100):
+        x = random.randrange(0,700)
+        y = random.randrange(0,500)
+        pygame.draw.circle(screen,pink,[x,y],2)
+#The route
+    car(screen,rx,ry)
+    pygame.draw.line(screen,white,[0,450],[400,450],2)
+    pygame.draw.line(screen,white,[0,370],[300,370],2)
+    pygame.draw.line(screen,white,[400,450],[400,250],2)
+    pygame.draw.line(screen,white,[300,370],[300,150],2)
+    pygame.draw.line(screen,white,[400,250],[600,250],2)
+    pygame.draw.line(screen,white,[600,250],[600,100],2)
+    pygame.draw.line(screen,white,[300,150],[500,150],2)
+    pygame.draw.line(screen,white,[600,100],[700,100],2)
+    pygame.draw.line(screen,white,[500,150],[500,0],2)
+    pygame.draw.line(screen,white,[500,0],[700,0],2)
+#The Sakura Picture
+    position = pygame.mouse.get_pos()
+    screen.blit(sakura,[10,200])
+    screen.blit(sakura,[500,300])
+    screen.blit(sakura,[150,0])
+#Positioning
+    pos=pygame.mouse.get_pos()
+    print (pos)
+
+#If the car crash
+    hidden_text(600,10)
+    hidden_text (170,420)
+    hidden_text(350,300)
+
+     
+    clock.tick(20)
+
+    pygame.display.flip()
+
+pygame.quit
