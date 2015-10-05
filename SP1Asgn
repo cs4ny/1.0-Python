@@ -1,0 +1,31 @@
+#This program will calculate your mark average
+
+print ("""                          Assignment
+                                    Mark Average  """)
+
+#The input of your grades
+a = int (input("Please enter your first mark. "))
+b = int (input("Please enter your second mark. "))
+c = int (input("Please enter your third mark. "))
+
+#Calculating the average
+average = (a+b+c)/3
+
+#Printing out your average
+print ("\nYour average mark is " +str (average))
+
+#Your final grade dependings on your average
+if average>85:
+    print ("\nCongratulations! Your final grade is an A.")
+elif average>70:
+    print ("\nGood Job! Your final grade is a B.")
+elif average<70:
+    print ("\nBoo! Your final grade is a C.")
+
+print ("""
+                    Thank you for using the grade average program """)
+
+#Exiting the program
+input ("\nPress the Enter key to exit.")
+
+                                                
