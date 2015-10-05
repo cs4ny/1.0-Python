@@ -1,0 +1,51 @@
+#The * Square
+for i in range (10):
+    for j in range (10):
+        print("*",end= " ")
+
+    print ()
+
+#The numbers Square
+for i in range (10):
+    for j in range (10):
+        print(i,end= " ")
+
+    print ()
+
+#Random Rock,Paper and Scissor for 100 times
+print ("The game of Rock, Paper, Scissor.")
+
+import random
+for i in range (10):
+    list =[ "rock", "paper", "scissor" ]
+    random_index= random.randrange(3)
+    print (list[random_index])
+for i in range(10):
+    coin = random.randrange (2)
+    print (coin)
+    if coin == 0:
+        print ("Heads")
+for i in range (1,6):
+    print(i)
+
+x=11
+while x<=11 and x>0:
+    x-=1
+    print (x)
+print ("Blast off!")
+
+x=5
+if x==10:
+    print("Great")
+elif x>=5 and x <10:
+    print ("good")
+
+a=15
+b=20
+not a ==b
+
+
+
+input("\nPress the enter key to exit")
+    
+  
