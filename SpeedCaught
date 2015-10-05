@@ -1,0 +1,46 @@
+# Caught Speeding Assignment
+print ("""                     Caught Speeding Assignment
+
+    You were driving and because of the slippery ice, there was an accident.
+                To make sure no other vehicle crashes.
+        Police came to the scence of accident to check car's speed.
+                    It's your turn, the police ask:""")
+
+#Ask the user  for their speed and if it's their birthday
+user_speed= int(input("\nWhat was your driving speed? "))
+birthday= int(input("He then ask:'Nice shirt,is it your birthday today? 1 for yes or 2 for no. "))
+
+#Adding 5km/h if it's their birthday
+if birthday == 1:
+    user_speed2 = user_speed+5
+else: user_speed2 = user_speed
+
+#If they speed is 60 or less and it is their birthday
+if user_speed2<=60 and birthday == 1:
+    print("\nGood,your speed was " +str (user_speed2)+""". You won't be charge with a speeding ticket.
+And happy birthday.""")
+
+#If it's not their birthday and less than 60
+elif user_speed2<60 and birthday==2:
+    print("\nYou didn't speed with " +str (user_speed2)+ """ km/h. You can go now.""")
+
+#If they speed is more than 60 and less than 81
+elif user_speed2>60 and user_speed<81:
+    print("\nYour speed was " +str (user_speed2)+""". You are charged with a small ticket.""")
+
+#If more than 81 and it's not their birthday
+elif user_speed2>81 and birthday == 2:
+    print("\nYour speed was " +str (user_speed2)+ """. You are charged with a big ticket.""")
+
+#If more than 81 and it's their birthday
+elif user_speed2>81 and birthday == 1:
+    print("\nYour speed was " +str (user_speed2)+ """. You get a big ticket.
+Not a bad way to spend your birthday money,right?""")
+
+    
+#The 5 extra speed police gave because it's their birthday
+if birthday ==1:
+    print("\nAnd by the way, your present was the 5km/h extra speed I gave you.")
+               
+
+input("\n Press the enter key to exit.")
