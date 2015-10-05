@@ -1,0 +1,76 @@
+import pygame
+black = (0,0,0)
+white = (255,255,255)
+green =  (0,255,0)
+red = ( 255,0,0)
+blue = (0,130,255)
+#Starting of the game
+pygame.init()
+size = [700,500]
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption ("Bombarded Shapes")
+done = False
+clock = pygame.time.Clock()
+
+#Measurement of Shapes and their Starting point
+rect_x = 50
+rect_y = 50
+rect_change_x = 100
+rect_change_y = 50
+x = 150
+y = 100
+xchange = 100
+ychange = 300
+xaxis = 300
+yaxis = 5
+xaxischange = 20
+yaxischange = 50
+cx = 200
+cy = 100
+cxchange = 50
+cychange = 200
+
+while done == False:
+    for event in pygame.event.get():
+        if event.type ==pygame.QUIT:
+            done= True
+#The moving of the Shapes
+    rect_x += rect_change_x
+    rect_y += rect_change_y
+    if rect_y > 450 or rect_y < 0:
+        rect_change_y = rect_change_y * -1
+    if rect_x > 650 or rect_x <0:
+        rect_change_x = rect_change_x *-1
+
+    x += xchange
+    y += ychange
+    if x> 650 or x <0:
+        xchange= xchange * -1
+    if y > 450 or y <0:
+        ychange= ychange * -1
+
+    xaxis +=xaxischange
+    yaxis += yaxischange
+    if xaxis>650 or xaxis < 0:
+        xaxischange= xaxischange * -1
+    if yaxis>450 or yaxis<0:
+        yaxischange= yaxischange * -1
+
+    cx +=cxchange
+    cy +=cychange
+    if cx>650 or cx<0:
+        cxchange = cxchange * -1
+    if cy>450 or cy<0:
+        cychange=cychange * -1
+#The drawings of the Shapes
+    screen.fill(white)
+    pygame.draw.rect(screen,black,[rect_x,rect_y,75,75])
+    pygame.draw.ellipse(screen,black,[x,y,75,75])
+    pygame.draw.rect(screen,black,[xaxis,yaxis,75,75])
+    pygame.draw.ellipse(screen,black,[cx,cy,75,75])
+
+    clock.tick(20)
+
+    pygame.display.flip()
+
+pygame.quit
