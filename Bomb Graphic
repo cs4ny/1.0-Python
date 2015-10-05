@@ -1,0 +1,37 @@
+import turtle
+
+wn = turtle.Screen()
+wn.bgcolor("black")
+
+noname = turtle.Turtle()
+noname.color ("blue")
+noname.pensize(4)
+mucha = turtle.Turtle()
+mucha.color ("green")
+mucha.pensize(3)
+bingo = turtle.Turtle()
+bingo.color ("red")
+bingo.pensize(2)
+
+def shape (x,y):
+    for j in range (10):
+        x.left(10)
+        x.forward(y)
+        x.left(90)
+        x.forward(y)
+        for i in ["yellow"]:
+            x.right(30)
+            x.forward(y)
+            x.right(30)
+            x.back(y)
+
+shape(noname,75)
+shape(mucha,50)
+shape(bingo,25)
+    
+
+
+
+
+
+wn.exitonclick()
