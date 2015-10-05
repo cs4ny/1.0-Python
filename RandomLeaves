@@ -1,0 +1,58 @@
+import turtle
+import random
+import pygame
+
+wn = turtle.Screen()
+wn.bgcolor("black")
+
+chuck = turtle.Turtle()
+chuck.color ("white")
+chuck.shape ("turtle")
+chuck.pensize (5)
+chuck.speed(0)
+
+def drawing ( color1,color2):
+    for i in range (10):
+        chuck.begin_poly()
+        chuck.begin_fill()
+        for i in [color1,color2]:
+            chuck.color(i)
+            chuck.fillcolor(i)
+            chuck.right(50)
+            chuck.back(10)
+            chuck.left(30)
+            chuck.forward(20)
+            chuck.right(50)
+            chuck.forward(15)
+            chuck.right(50)
+            chuck.back(10)
+            chuck.left(30)
+            chuck.forward(20)
+            chuck.right(50)
+            chuck.forward(15)
+            chuck.right(50)
+            chuck.back(10)
+            chuck.left(30)
+            chuck.forward(20)
+            chuck.right(50)
+            chuck.forward(15)
+        chuck.end_poly()
+        chuck.end_fill()
+        chuck.penup()
+        x = random.randrange(300)
+        y= random.randrange (300)
+        chuck.goto(x,y)
+        chuck.pendown()
+
+
+drawing("blue","yellow")
+drawing("red","green")
+drawing("white","pink")
+drawing("brown","red")
+drawing("green","blue")
+drawing("orange","white")
+
+wn.exitonclick()
+
+            
+    
