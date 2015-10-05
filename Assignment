@@ -1,0 +1,138 @@
+print\
+("""                         <<<< Python Second Program  >>>>
+                                Today's Assignment
+
+                        """)
+
+input ("\nPress the Enter key to get started.")
+#Start of the story
+print\
+("""
+    'Wake up, Wake up', reacting to the voice, you woke up,... slowly,
+finding yourself, face to face, with a cow. Being polite, the cow asks:
+                        'Hey,what's your name? '""")
+#Enter your name
+name= input("\nYou answer ")
+
+print\
+("\n\tWell, nice to meet you, " +str (name)+ ".I'm Bobby the cow. Say,\
+ what were you doing here in this hot desert? ")
+
+#Enter your choices
+print\
+("""
+                    Choose the following choices: ( in number )
+                     1. Wandering around trying to find food.
+                            2. Reading a book.
+                        3. Trying not to faint. """)
+
+choices = int(input (" I was "))
+
+# If, Elif ,Else statement
+# Your Answer and Outcome
+if choices == 1:
+    print (" Well well, then today is your lucky day. Follow me \
+and I'll get you to some food ")
+
+elif choices == 2:
+    print ( " In this hot desert? You have some crazy idea " +str (name)+ " \
+But since you're here already,\
+ let me show you around. ")
+
+elif choices == 3:
+    print ( " But you've already did, lad. Try not to move around too much.\
+Let me get you to a cooler place . ")
+
+#Continue of the story
+print\
+("""                                    1 hour later
+    You find yourself, carrying a cow on your back, sweating yourself infront of
+a worn down bar.""")
+
+#Press Enter here
+input ("\nPress enter to know why the cow was on your back.")
+
+print\
+("""
+    Well, I told you that I would only lead you to someplace, not to walk on my
+own, right? Anyways, we're here, to the coolest bar in the whole wide worlds,
+let's go and get some food. """)
+
+#Your Restaurant Menu
+print\
+("""    Walking inside, you find a menu covers with dust, It said:
+
+                                    Main Dish 
+                    1.Burger ( bugs sauter with chese and rotten tomatoes)
+                    2. Salad ( grass, leaves of the fall)
+                    3. Steak ( Rat meat with snake sauce )
+                    4. Soup of the day ( Apple soup with mud)
+
+                                    Drinks 
+                    5. Mud smoothies
+                    6. Birds spit
+                    7. River water ( the dirty kind )
+
+                                    Desert 
+                    8. Rainbow candy 
+                    9. Rainbow cake""")
+
+bill = int(input ("\nWhich number do you wish to order for your maindish? "))
+bill2 = int(input ("\nWhich number do you wish to order for your drinks? "))
+bill3 = int (input ("\nWhich number do you wish to order for your desert? "))
+
+#Custom Calculator (How the computer calculate your bill)
+
+actual_bill= bill * 100
+actual_bill2 = bill2 * 50
+actual_bill3 = bill3 * 1000
+
+total_bill = actual_bill + actual_bill2 + actual_bill3
+
+print\
+("\nAfter the fullfiling meal, your bill was presented to you. With a total of"
+ +str(total_bill)+ " $. 100 times of the number of the maindish, 50 times\
+of the drink and 1000 times of the desert.")
+
+print\
+("  And since you're broke after a robbery in the desert, you and the \
+cow were force to play a 'Life or Death' game of rolling the dice")
+
+# Random Randrange
+# Dice Rolling
+import random
+
+
+input("\n Press the Enter key to roll. ")
+r1= random.randrange (7)
+print ("You rolled " +str (r1)+ " for the first turn.")
+input("\n Press the Enter key to roll. ")
+r2=random.randrange (7)
+print ("You rolled " +str (r2) + " for the second turn.")
+input("\n Press the Enter key to roll. ")
+r3 = random.randrange (7)
+print ("You rolled " +str (r3)+ " for the third turn.")
+input("\n Press the Enter key to roll. ")
+r4 = random.randrange (7)
+print ("You rolled " +str (r4) +" for the fourth turn.")
+input("\n Press the Enter key to roll. ")
+r5= random.randrange (7)
+print ("You rolled " +str (r5) + " for the fifth turn.")
+average = (r1+r2+r3+r4+r5) / 5
+
+# Final Ending of the story
+if average > 3.5: print( "\n Congratulations, you won with an average of" +str(average)+ " you can \
+ now live peacefully with the cow for the rest of your life")
+else:print("\n You lose with an average of  " +str (average)+ " and get to spend your whole life in the stinky basement.")
+
+print\
+("""                                The End
+
+                                                   """)
+
+input ("\n Press the Enter key to exit ")
+             
+
+
+
+
