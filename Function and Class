@@ -1,0 +1,21 @@
+class dog():
+    age=10
+    name="Bob"
+    weight=50
+
+print ("My dog name is Bob. It is 10 years old. And it weighs 50 pounds.")
+
+def character(your):
+       print(name,age,weight)
+
+n=input("What is your dog name?")
+x=input("How old is your dog?")
+w=input("How many pounds does your dog weighs?")
+
+your_dog= dog()
+your_dog.age = x
+your_dog.name = n
+your_dog.dog.weight = w
+
+character(your_dog)
+
